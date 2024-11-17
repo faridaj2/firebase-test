@@ -37,8 +37,8 @@ const messaging = firebase.messaging();
 messaging.onBackgroundMessage(function (payload) {
     console.log('[firebase-messaging-sw.js] Received background message ', payload);
     // Customize notification here
-    const notificationTitle = payload.title || 'New Message!';
-    const notificationBody = payload.message || 'You have a new message.';
+    const notificationTitle = payload.notification.title || 'New Message!';
+    const notificationBody = payload.notification.message || 'You have a new message.';
     const notificationOptions = {
         body: notificationBody,
         icon: '/my-app-icon.png',
