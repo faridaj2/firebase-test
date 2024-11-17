@@ -17,8 +17,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
 
-
-
 // Function to request permission for notifications
 
 Notification.requestPermission().then((permission) => {
