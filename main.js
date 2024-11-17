@@ -41,6 +41,13 @@ function requestPermission() {
   });
 }
 
+messaging.onMessage(function (payload) {
+  console.log("Pesan diterima:", payload);
+  // Tampilkan pesan di UI
+  // Atau jalankan tindakan lain berdasarkan payload pesan
+  alert('Pesan diterima')
+});
+
 // Request permission on page load
 requestPermission();
 
