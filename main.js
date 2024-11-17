@@ -41,7 +41,7 @@ function requestPermission() {
   });
 }
 
-onMessage(function (payload) {
+onMessage(messaging, function (payload) {
   console.log("Pesan diterima:", payload);
   // Tampilkan pesan di UI
   // Atau jalankan tindakan lain berdasarkan payload pesan
