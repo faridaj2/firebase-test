@@ -17,7 +17,7 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/firebase-messaging-sw.js')
                 .then(function (registration) {
-                    console.log('Service Worker berhasil terdaftar:', registration);
+                    console.log('Service Worker berhasil terdaftar');
                 })
                 .catch(function (error) {
                     console.error('Pendaftaran Service Worker gagal:', error);
