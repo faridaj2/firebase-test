@@ -17,24 +17,26 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
 
+getToken(messaging, { vapidKey: 'BKR3M4vyA_kUFwmdErwwQb7Xg360bwmp8JendZkeF7oOMdv1tKH1Ce7f53y3rDqTuLQbrztMTmEfdMac67A_uo8' })
+  .then((currentToken) => {
+    if (currentToken) {
+      console.log('Token: ', currentToken);
+      document.getElementById("app").innerHTML = currentToken;
+      // Send the token to your server or use it in your app
+    } else {
+      console.log('No registration token available.');
+    }
+  }).catch((err) => {
+    console.log('An error occurred while retrieving token: ', err);
+  });
+
 // Function to request permission for notifications
 function requestPermission() {
   Notification.requestPermission().then((permission) => {
     if (permission === 'granted') {
       console.log('Notification permission granted.');
       // After permission is granted, retrieve the token
-      getToken(messaging, { vapidKey: 'BKR3M4vyA_kUFwmdErwwQb7Xg360bwmp8JendZkeF7oOMdv1tKH1Ce7f53y3rDqTuLQbrztMTmEfdMac67A_uo8' })
-        .then((currentToken) => {
-          if (currentToken) {
-            console.log('Token: ', currentToken);
-            document.getElementById("app").innerHTML = currentToken;
-            // Send the token to your server or use it in your app
-          } else {
-            console.log('No registration token available.');
-          }
-        }).catch((err) => {
-          console.log('An error occurred while retrieving token: ', err);
-        });
+
     } else {
       console.log('Unable to get permission to notify.');
     }
