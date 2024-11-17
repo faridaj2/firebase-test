@@ -35,17 +35,17 @@ const messaging = firebase.messaging();
 // For more info see: 
 // https://firebase.google.com/docs/cloud-messaging/concept-options
 messaging.onBackgroundMessage(function (payload) {
-    console.log('[firebase-messaging-sw.js] Received background message ', payload);
-    // Customize notification here
-    const notificationTitle = payload.title || 'New Message!';
-    const notificationBody = payload.message || 'You have a new message.';
-    const notificationOptions = {
-        body: notificationBody,
-        icon: '/my-app-icon.png',
-        sound: 'notification.wav',
-        click_action: '/messages' // Open the messages page on click
-    };
+    // console.log('[firebase-messaging-sw.js] Received background message ', payload);
+    // // Customize notification here
+    // const notificationTitle = payload.title || 'New Message!';
+    // const notificationBody = payload.message || 'You have a new message.';
+    // const notificationOptions = {
+    //     body: notificationBody,
+    //     icon: '/my-app-icon.png',
+    //     sound: 'notification.wav',
+    //     click_action: '/messages' // Open the messages page on click
+    // };
 
-    self.registration.showNotification(notificationTitle,
-        notificationOptions);
+    // self.registration.showNotification(notificationTitle,
+    //     notificationOptions);
 });
