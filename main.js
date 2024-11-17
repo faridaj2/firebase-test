@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getMessaging, getToken } from "firebase/messaging";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -41,7 +41,12 @@ function requestPermission() {
   });
 }
 
-
+onMessage(function (payload) {
+  console.log("Pesan diterima:", payload);
+  // Tampilkan pesan di UI
+  // Atau jalankan tindakan lain berdasarkan payload pesan
+  alert('Pesan diterima')
+});
 
 // Request permission on page load
 requestPermission();
