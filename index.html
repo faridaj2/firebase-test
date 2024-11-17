@@ -11,6 +11,18 @@
 <body>
     <div id="app"></div>
     <script type="module" src="/main.js"></script>
+    <script>
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./firebase-messaging-sw.js')
+                .then(function (registration) {
+                    console.log('Service Worker berhasil terdaftar:', registration);
+                })
+                .catch(function (error) {
+                    console.error('Pendaftaran Service Worker gagal:', error);
+                });
+        }
+    </script>
 </body>
 
 </html>

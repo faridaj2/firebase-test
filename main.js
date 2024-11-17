@@ -44,13 +44,4 @@ function requestPermission() {
 // Request permission on page load
 requestPermission();
 
-// Register the service worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./firebase-messaging-sw.js')
-    .then(function (registration) {
-      console.log('Service Worker berhasil terdaftar:', registration);
-    })
-    .catch(function (error) {
-      console.error('Pendaftaran Service Worker gagal:', error);
-    });
-}
+
