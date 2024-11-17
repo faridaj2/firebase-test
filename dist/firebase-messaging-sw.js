@@ -49,9 +49,3 @@ messaging.onBackgroundMessage(function (payload) {
     // self.registration.showNotification(notificationTitle,
     //     notificationOptions);
 });
-messaging.onMessage(function (payload) {
-    console.log("Pesan diterima:", payload);
-    // Tampilkan pesan di UI
-    // Atau jalankan tindakan lain berdasarkan payload pesan
-    alert('Pesan diterima')
-});
